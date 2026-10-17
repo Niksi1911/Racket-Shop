@@ -4,30 +4,42 @@ import axios from "axios";
 function App() {
 
   const [sport, setSport] = useState('');
-  const [brand, setBrand]  = useState('');
+  const [sports, setSports] = useState([]);
 
-  const[sports,setSports] = useState([]);
+  const [rackets, setRackets] = useState([]);
+  const [brand, setBrand] = useState('');
 
-  useEffect(()=>{
-    axios.get('https://71db67193d074d2ab316130aa655fbab-oas.api.mockbin.io/rackets').then((response)=>{
-    setSports(response.data)
-  });
-  },[])
-  
-  
-  const sportBrand = {
-    tenis: ["Wilson", "Head", "Babolat"],
-    padel: ["Nox", "Siux", "BullPadel"],
-    tableTennis: ["Butterfly", "Stiga", "Donic"],
-    badminton: ["Yonex", "Victor", "Li-Ning"]
-  }
+  const brands = [...new Set(rackets.map((racket) => (racket.brand)))];
+
+  {/*PRVI DOHVAT REKETA */ }
+  useEffect(() => {
+    axios
+      .get('https://71db67193d074d2ab316130aa655fbab-oas.api.mockbin.io/rackets')
+      .then((response) => {
+        setSports(response.data)
+      });
+  }, [])
+
+  {/*DRUGI DOHVAT MARKE */ }
+  useEffect(() => {
+    if (!sport) {
+      return;
+    }
+    axios
+      .get(`https://71db67193d074d2ab316130aa655fbab-oas.api.mockbin.io/rackets/${sport}`)
+      .then((response) => {
+        
+        setRackets(response.data)
+      })
+  }, [sport])
 
   function changeSport(event) {
-    setSport(event.target.value)
+    setSport(event.target.value);
+    setBrand('');
   }
 
-  function changeBrand(event){
-    setBrand(event.target.value)
+  function changeBrand(event) {
+    setBrand(event.target.value);
   }
 
 
@@ -36,49 +48,59 @@ function App() {
       <h1>RACKET SHOP</h1>
 
       <label>Choose a sport:</label>
+
       {/*PRVI DROP DOWN*/}
       <select onChange={changeSport} value={sport}>
-        <option value="" disabled hidden>Choose a sport</option>
-        <option value='tenis'>Tenis</option>
-        <option value='padel'>Padel</option>
-        <option value='tableTennis'>Table Tennis</option>
-        <option value='badminton'>Badminton</option>
+        <option value="" disabled hidden>
+          Choose a sport
+        </option>
+
+        {sports.map((item) => {
+          let displayName;
+
+          if (item === "tableTennis") {
+            displayName = "Table Tennis";
+          } else {
+            displayName = item.charAt(0).toUpperCase() + item.slice(1)
+          }
+          return (
+            <option key={item} value={item}>
+              {displayName}
+            </option>
+          );
+        })}
+
       </select>
 
       {sport && <p>Trenutno izabrani sport je {sport}</p>}
 
-      
-      {/*DRUGI DROP DOWN*/}
+
+      {/* DRUGI DROP DOWN */}
       {sport && (
         <>
           <label>Choose a brand: </label>
 
-          <select value={brand} onChange={changeBrand}>
+          <select onChange={changeBrand} value={brand}>
             <option value="" disabled hidden>
               Choose a brand
             </option>
 
-            {sportBrand[sport].map((brand) => {
+            {brands.map((item) => {
               return (
-                <option key={brand} value={brand}>
-                  {brand}
+                <option key={item} value={item}>
+                  {item}
                 </option>
               );
             })}
           </select>
         </>
       )}
-      
+
       {brand && <p>Trenutno izabrani brand je {brand}</p>}
 
-      {sports.map((item)=>{
-        return(
-          <p key = {item}>{item}</p>
-        );
 
-      })}
-      
-      
+
+
 
     </>
   );
