@@ -1,0 +1,637 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Racket Shop API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/rackets": {
+      "get": {
+        "summary": "Get all racket sports",
+        "responses": {
+          "200": {
+            "description": "List of racket sports",
+            "content": {
+              "application/json": {
+                "example": [
+                  "tenis",
+                  "padel",
+                  "tableTennis",
+                  "badminton"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/tenis": {
+      "get": {
+        "summary": "Get all tennis rackets",
+        "responses": {
+          "200": {
+            "description": "List of tennis rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 1,
+                    "name": "Wilson Blade 98",
+                    "brand": "Wilson",
+                    "sport": "tenis",
+                    "price": 219.99
+                  },
+                  {
+                    "id": 2,
+                    "name": "Wilson Clash 100",
+                    "brand": "Wilson",
+                    "sport": "tenis",
+                    "price": 199.99
+                  },
+                  {
+                    "id": 3,
+                    "name": "Head Speed MP",
+                    "brand": "Head",
+                    "sport": "tenis",
+                    "price": 229.99
+                  },
+                  {
+                    "id": 4,
+                    "name": "Head Radical MP",
+                    "brand": "Head",
+                    "sport": "tenis",
+                    "price": 209.99
+                  },
+                  {
+                    "id": 5,
+                    "name": "Babolat Pure Aero",
+                    "brand": "Babolat",
+                    "sport": "tenis",
+                    "price": 239.99
+                  },
+                  {
+                    "id": 6,
+                    "name": "Babolat Pure Drive",
+                    "brand": "Babolat",
+                    "sport": "tenis",
+                    "price": 229.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/tenis/wilson": {
+      "get": {
+        "summary": "Get Wilson tennis rackets",
+        "responses": {
+          "200": {
+            "description": "Wilson tennis rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 1,
+                    "name": "Wilson Blade 98",
+                    "brand": "Wilson",
+                    "sport": "tenis",
+                    "price": 219.99
+                  },
+                  {
+                    "id": 2,
+                    "name": "Wilson Clash 100",
+                    "brand": "Wilson",
+                    "sport": "tenis",
+                    "price": 199.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/tenis/head": {
+      "get": {
+        "summary": "Get Head tennis rackets",
+        "responses": {
+          "200": {
+            "description": "Head tennis rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 3,
+                    "name": "Head Speed MP",
+                    "brand": "Head",
+                    "sport": "tenis",
+                    "price": 229.99
+                  },
+                  {
+                    "id": 4,
+                    "name": "Head Radical MP",
+                    "brand": "Head",
+                    "sport": "tenis",
+                    "price": 209.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/tenis/babolat": {
+      "get": {
+        "summary": "Get Babolat tennis rackets",
+        "responses": {
+          "200": {
+            "description": "Babolat tennis rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 5,
+                    "name": "Babolat Pure Aero",
+                    "brand": "Babolat",
+                    "sport": "tenis",
+                    "price": 239.99
+                  },
+                  {
+                    "id": 6,
+                    "name": "Babolat Pure Drive",
+                    "brand": "Babolat",
+                    "sport": "tenis",
+                    "price": 229.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/padel": {
+      "get": {
+        "summary": "Get all padel rackets",
+        "responses": {
+          "200": {
+            "description": "List of padel rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 7,
+                    "name": "Nox AT10 Genius",
+                    "brand": "Nox",
+                    "sport": "padel",
+                    "price": 249.99
+                  },
+                  {
+                    "id": 8,
+                    "name": "Nox ML10 Pro Cup",
+                    "brand": "Nox",
+                    "sport": "padel",
+                    "price": 189.99
+                  },
+                  {
+                    "id": 9,
+                    "name": "Siux Electra",
+                    "brand": "Siux",
+                    "sport": "padel",
+                    "price": 259.99
+                  },
+                  {
+                    "id": 10,
+                    "name": "Siux Diablo",
+                    "brand": "Siux",
+                    "sport": "padel",
+                    "price": 239.99
+                  },
+                  {
+                    "id": 11,
+                    "name": "Bullpadel Hack",
+                    "brand": "Bullpadel",
+                    "sport": "padel",
+                    "price": 269.99
+                  },
+                  {
+                    "id": 12,
+                    "name": "Bullpadel Vertex",
+                    "brand": "Bullpadel",
+                    "sport": "padel",
+                    "price": 259.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/padel/nox": {
+      "get": {
+        "summary": "Get Nox padel rackets",
+        "responses": {
+          "200": {
+            "description": "Nox padel rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 7,
+                    "name": "Nox AT10 Genius",
+                    "brand": "Nox",
+                    "sport": "padel",
+                    "price": 249.99
+                  },
+                  {
+                    "id": 8,
+                    "name": "Nox ML10 Pro Cup",
+                    "brand": "Nox",
+                    "sport": "padel",
+                    "price": 189.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/padel/siux": {
+      "get": {
+        "summary": "Get Siux padel rackets",
+        "responses": {
+          "200": {
+            "description": "Siux padel rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 9,
+                    "name": "Siux Electra",
+                    "brand": "Siux",
+                    "sport": "padel",
+                    "price": 259.99
+                  },
+                  {
+                    "id": 10,
+                    "name": "Siux Diablo",
+                    "brand": "Siux",
+                    "sport": "padel",
+                    "price": 239.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/padel/bullpadel": {
+      "get": {
+        "summary": "Get Bullpadel padel rackets",
+        "responses": {
+          "200": {
+            "description": "Bullpadel padel rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 11,
+                    "name": "Bullpadel Hack",
+                    "brand": "Bullpadel",
+                    "sport": "padel",
+                    "price": 269.99
+                  },
+                  {
+                    "id": 12,
+                    "name": "Bullpadel Vertex",
+                    "brand": "Bullpadel",
+                    "sport": "padel",
+                    "price": 259.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/tableTennis": {
+      "get": {
+        "summary": "Get all table tennis rackets",
+        "responses": {
+          "200": {
+            "description": "List of table tennis rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 13,
+                    "name": "Butterfly Timo Boll ALC",
+                    "brand": "Butterfly",
+                    "sport": "tableTennis",
+                    "price": 179.99
+                  },
+                  {
+                    "id": 14,
+                    "name": "Butterfly Viscaria",
+                    "brand": "Butterfly",
+                    "sport": "tableTennis",
+                    "price": 169.99
+                  },
+                  {
+                    "id": 15,
+                    "name": "Stiga Carbonado 145",
+                    "brand": "Stiga",
+                    "sport": "tableTennis",
+                    "price": 149.99
+                  },
+                  {
+                    "id": 16,
+                    "name": "Stiga Cybershape Carbon",
+                    "brand": "Stiga",
+                    "sport": "tableTennis",
+                    "price": 159.99
+                  },
+                  {
+                    "id": 17,
+                    "name": "Donic Ovtcharov True Carbon",
+                    "brand": "Donic",
+                    "sport": "tableTennis",
+                    "price": 139.99
+                  },
+                  {
+                    "id": 18,
+                    "name": "Donic Waldner Senso Carbon",
+                    "brand": "Donic",
+                    "sport": "tableTennis",
+                    "price": 129.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/tableTennis/butterfly": {
+      "get": {
+        "summary": "Get Butterfly table tennis rackets",
+        "responses": {
+          "200": {
+            "description": "Butterfly table tennis rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 13,
+                    "name": "Butterfly Timo Boll ALC",
+                    "brand": "Butterfly",
+                    "sport": "tableTennis",
+                    "price": 179.99
+                  },
+                  {
+                    "id": 14,
+                    "name": "Butterfly Viscaria",
+                    "brand": "Butterfly",
+                    "sport": "tableTennis",
+                    "price": 169.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/tableTennis/stiga": {
+      "get": {
+        "summary": "Get Stiga table tennis rackets",
+        "responses": {
+          "200": {
+            "description": "Stiga table tennis rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 15,
+                    "name": "Stiga Carbonado 145",
+                    "brand": "Stiga",
+                    "sport": "tableTennis",
+                    "price": 149.99
+                  },
+                  {
+                    "id": 16,
+                    "name": "Stiga Cybershape Carbon",
+                    "brand": "Stiga",
+                    "sport": "tableTennis",
+                    "price": 159.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/tableTennis/donic": {
+      "get": {
+        "summary": "Get Donic table tennis rackets",
+        "responses": {
+          "200": {
+            "description": "Donic table tennis rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 17,
+                    "name": "Donic Ovtcharov True Carbon",
+                    "brand": "Donic",
+                    "sport": "tableTennis",
+                    "price": 139.99
+                  },
+                  {
+                    "id": 18,
+                    "name": "Donic Waldner Senso Carbon",
+                    "brand": "Donic",
+                    "sport": "tableTennis",
+                    "price": 129.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/badminton": {
+      "get": {
+        "summary": "Get all badminton rackets",
+        "responses": {
+          "200": {
+            "description": "List of badminton rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 19,
+                    "name": "Yonex Astrox 100 ZZ",
+                    "brand": "Yonex",
+                    "sport": "badminton",
+                    "price": 199.99
+                  },
+                  {
+                    "id": 20,
+                    "name": "Yonex Nanoflare 1000 Z",
+                    "brand": "Yonex",
+                    "sport": "badminton",
+                    "price": 189.99
+                  },
+                  {
+                    "id": 21,
+                    "name": "Victor Thruster K",
+                    "brand": "Victor",
+                    "sport": "badminton",
+                    "price": 179.99
+                  },
+                  {
+                    "id": 22,
+                    "name": "Victor Auraspeed 90K",
+                    "brand": "Victor",
+                    "sport": "badminton",
+                    "price": 169.99
+                  },
+                  {
+                    "id": 23,
+                    "name": "Li-Ning Axforce 90",
+                    "brand": "Li-Ning",
+                    "sport": "badminton",
+                    "price": 189.99
+                  },
+                  {
+                    "id": 24,
+                    "name": "Li-Ning Tectonic 9",
+                    "brand": "Li-Ning",
+                    "sport": "badminton",
+                    "price": 179.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/badminton/yonex": {
+      "get": {
+        "summary": "Get Yonex badminton rackets",
+        "responses": {
+          "200": {
+            "description": "Yonex badminton rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 19,
+                    "name": "Yonex Astrox 100 ZZ",
+                    "brand": "Yonex",
+                    "sport": "badminton",
+                    "price": 199.99
+                  },
+                  {
+                    "id": 20,
+                    "name": "Yonex Nanoflare 1000 Z",
+                    "brand": "Yonex",
+                    "sport": "badminton",
+                    "price": 189.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/badminton/victor": {
+      "get": {
+        "summary": "Get Victor badminton rackets",
+        "responses": {
+          "200": {
+            "description": "Victor badminton rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 21,
+                    "name": "Victor Thruster K",
+                    "brand": "Victor",
+                    "sport": "badminton",
+                    "price": 179.99
+                  },
+                  {
+                    "id": 22,
+                    "name": "Victor Auraspeed 90K",
+                    "brand": "Victor",
+                    "sport": "badminton",
+                    "price": 169.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rackets/badminton/liNing": {
+      "get": {
+        "summary": "Get Li-Ning badminton rackets",
+        "responses": {
+          "200": {
+            "description": "Li-Ning badminton rackets",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "id": 23,
+                    "name": "Li-Ning Axforce 90",
+                    "brand": "Li-Ning",
+                    "sport": "badminton",
+                    "price": 189.99
+                  },
+                  {
+                    "id": 24,
+                    "name": "Li-Ning Tectonic 9",
+                    "brand": "Li-Ning",
+                    "sport": "badminton",
+                    "price": 179.99
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
