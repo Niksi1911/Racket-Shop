@@ -5,13 +5,22 @@ class Details extends React.Component {
 
 
     render() {
+        const racket = this.props.racket;
 
-        
+        if (!racket) {
+            <p>No racket info</p>
+        }
+
 
         return (
-           <div>
-                <p>Detalji</p>
-           </div>
+            <div>
+                <h1>{racket.name}</h1>
+
+                <p>ID: {racket.id}</p>
+                <p>Sport: {racket.sport}</p>
+                <p>Brand: {racket.brand}</p>
+                <p>Price: {racket.price} €</p>
+            </div>
         );
 
     }

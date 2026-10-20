@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router";
 import HomePage from "./Components/HomePage";
-import Details from "./Components/Details";
+
+import DetailsPage from "./Components/DetailsPage";
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
   return (
     <Routes>
       <Route index element={<HomePage />}></Route>
-      <Route path="details/:id" element={<Details/>}></Route>
+      <Route path="details/:id" element={<DetailsPage/>}></Route>
     </Routes>
   );
 }
