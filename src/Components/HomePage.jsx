@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import DisplayRackets from "./DisplayRackets"
+import DisplayRackets from "./DisplayRackets";
+import "./HomePage.css";
+import heroImage from "../assets/hero.png"
 
 function HomePapge() {
 
@@ -55,8 +57,17 @@ function HomePapge() {
 
     return (
         <>
+            <div className="hero-container">
+                <div className="hero-text">
+                    <h1>Your GAME Your RACKET </h1>
+                    <p>Find the racket that fits your style of play.</p>
+                </div>
+                <div className="hero-image">
+                    <img src={heroImage} alt="" />
+                </div>
 
-            <h1>RACKET SHOP</h1>
+
+            </div>
             <label>Choose a sport:</label>
 
             {/*PRVI DROP DOWN*/}
