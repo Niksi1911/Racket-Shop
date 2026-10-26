@@ -3,6 +3,7 @@ import axios from "axios";
 import DisplayRackets from "./DisplayRackets";
 import "./HomePage.css";
 import heroImage from "../assets/hero.png"
+import { CartContext } from "../context";
 
 function HomePapge() {
 
@@ -57,6 +58,7 @@ function HomePapge() {
 
     return (
         <>
+        
             <div className="hero-container">
                 <div className="hero-text">
                     <h1>Your GAME Your RACKET </h1>
@@ -68,6 +70,8 @@ function HomePapge() {
 
 
             </div>
+
+            
             <label>Choose a sport:</label>
 
             {/*PRVI DROP DOWN*/}
@@ -116,8 +120,10 @@ function HomePapge() {
                 </>
             )}
             
-            <DisplayRackets rackets = {racketsToDisplay}/>
             
+            <CartContext.Provider value={rackets}>
+                <DisplayRackets rackets = {racketsToDisplay}/>
+            </CartContext.Provider>
             
         </>
     );

@@ -80,3 +80,35 @@
     flex-shrink: 0;
 }
 
+.navbar-cart-wrapper {
+    position: relative;
+}
+
+.navbar-cart {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-cart-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 260px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px #10243a1a;
+    z-index: 10;
+}
+
+.navbar-cart-dropdown p {
+    margin: 0;
+    color: #66717d;
+}
